@@ -8,6 +8,196 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
+  <header class="page-header">
+    <div class="page-header__container container">
+      <a class="page-header__logo">
+        <img src="img/logo.svg" width="202" height="52" alt="Логотип &#171;Smart Device&#187;">
+      </a>
+      <address class="page-header__contacts contacts">
+        <a href="mailto:info@sd.ru" class="contacts__link contacts__link--mail">info@sd.ru</a>
+        <a href="tel:+74950005252" class="contacts__link contacts__link--phone">+7 (495) 000 52 52</a>
+      </address>
+      <a href="#" class="page-header__btn btn">Заказать звонок</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="promo">
+      <div class="promo__container container">
+        <h1>Печатные платы</h1>
+        <p>Производство и монтаж, поставка комплектующих, блоков и модулей</p>
+        <a href="#callback" class="promo__btn btn">Получить бесплатную консультацию</a>
+        <a href="#features" class="promo__link">Скролл вниз</a>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="features__container container">
+        <h2 class="visually-hidden">Наши преимущества</h2>
+        <ul>
+          <li>
+            <h3>Оперативные сроки</h3>
+            <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки.</p>
+          </li>
+          <li>
+            <h3>Крупные поставщики</h3>
+            <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.</p>
+          </li>
+          <li>
+            <h3>Полная конфиденциальность</h3>
+            <p>По желанию клиента  мы обеспечиваем полную конфеденциальность.</p>
+          </li>
+          <li>
+            <h3>Персонализация стоимости</h3>
+            <p>Мы  подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about__container container">
+        <h2>О компании</h2>
+        <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
+        <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
+      </div>
+    </section>
+
+    <section class="offers">
+      <div class="offers__container container">
+        <h2 class="visually-hidden">Товары и услуги</h2>
+        <p>Service Device предлагает следующие товары и услуги</p>
+        <ul>
+          <li>
+            <a href="#" class="offers__link offers__link--production">
+              <h3>Производство печатных плат</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="offers__link offers__link--assembling">
+              <h3>Монтаж печатных плат</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="offers__link offers__link--components">
+              <h3>Комплектующие для светотехники</h3>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="callback" class="callback">
+      <div class="callback__container container">
+        <h2 class="visually-hidden">Обратная связь</h2>
+        <b>Остались вопросы? Задайте их нам!</b>
+        <p>Мы проконсультируем Вас бесплатно</p>
+
+        <form action="post" class="callback__form">
+          <label for="name" class="visually-hidden">Ваше имя:</label>
+          <input type="text" name="name-field" id="name" placeholder="Имя">
+
+          <label for="phone" class="visually-hidden">Ваш номер телефона:</label>
+          <input type="tel" name="phone-field" id="phone" placeholder="Телефон">
+
+          <label for="question" class="visually-hidden">Ваш вопрос:</label>
+          <textarea name="question-field" id="question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+
+          <label for="agreement">Я согласен на обработку  персональных данных</label>
+          <input type="checkbox" name="agreement-field" id="agreement">
+          <button type="submit">Задать вопрос</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="page-footer__container">
+      <div class="page-footer__top">
+        <a class="page-footer__logo">
+          <img src="img/logo.svg" width="216" height="52" alt="Логотип &#171;Smart Device&#187;">
+        </a>
+
+        <ul class="page-footer__social social">
+          <li class="social__item">
+            <a href="#" class="social__link social__link--facebook">Facebook</a>
+          </li>
+          <li class="social__item">
+            <a href="" class="social__link social__link--odnoklassniki">Одноклассники</a>
+          </li>
+          <li class="social__item">
+            <a href="" class="social__link social__link--vkontakte">ВКонтакте</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="page-footer__middle">
+        <nav class="page-footer__nav">
+          <h2 class="page-footer__heading">Разделы сайта</h2>
+          <ul class="page-footer__nav-list">
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link">О компании</a>
+            </li>
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link">Продукты</a>
+            </li>
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link">Производство печатных плат</a>
+            </li>
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link">Монтаж печатных плат</a>
+            </li>
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link">Комплектующие</a>
+            </li>
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link">Доставка</a>
+            </li>
+            <li class="page-footer__nav-item">
+              <a href="#" class="page-footer__nav-link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+
+        <address class="page-footer__contacts">
+          <p class="page-footer__contacts-address">г. Мытищи, Олимпийский проспект, д.10</p>
+          <a href="tel:+74955894050" class="page-footer__contacts-link">+7 (495) 589-40-50</a>
+          <a href="tel:+79250038767" class="page-footer__contacts-link">+7 (925) 003-87-67</a>
+          <a href="tel:+792692608079" class="page-footer__contacts-link">+7 (926) 926-080-79</a>
+        </address>
+      </div>
+
+      <div class="page-footer__bottom">
+        <div class="page-footer__copyright">
+          <p class="page-footer__copyright-text page-footer__copyright-text--rights">Все права защищены</p>
+          <p class="page-footer__copyright-text">1999-2018 SD Service Devices</p>
+        </div>
+        <a href="#" class="page-footer__privacy">Условия конфиденциальности</a>
+        <a href="#" class="page-footer__developer">Developed by wow studio</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="popup">
+    <h2 class="visually-hidden">Обратная связь</h2>
+    <b>Закажите звонок</b>
+    <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+    <form action="post" class="popup__form">
+      <label for="popup-name" class="visually-hidden">Ваше имя:</label>
+      <input type="text" name="name-field" id="popup-name" placeholder="Имя">
+
+      <label for="popup-phone" class="visually-hidden">Ваш номер телефона:</label>
+      <input type="tel" name="phone-field" id="popup-phone" placeholder="Телефон">
+
+      <label for="popup-question" class="visually-hidden">Ваш вопрос:</label>
+      <textarea name="question-field" id="popup-question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+
+      <label for="popup-agreement">Я согласен на обработку  персональных данных</label>
+      <input type="checkbox" name="agreement-field" id="popup-agreement">
+      <button type="submit">Задать вопрос</button>
+    </form>
+  </div>
+  <div class="popup-overlay"></div>
   <script src="js/main.js"></script>
 </body>
 </html>
