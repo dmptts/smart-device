@@ -1,0 +1,22 @@
+.btn {
+  display: block;
+  min-width: 180px;
+
+  padding-top: 13px;
+  padding-bottom: 14px;
+  padding-left: 13px;
+  padding-right: 13px;
+
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: bold;
+  color: $color-blue;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+
+  background-color: transparent;
+  border: 1px solid $color-blue;
+  border-radius: 5px;
+}
