@@ -1,5 +1,8 @@
 .page-header {
-  background-color: #1b2d37;
+  position: relative;
+  z-index: 1;
+
+  margin-top: 33px;
 }
 
 .page-header__container {
@@ -7,8 +10,6 @@
   align-items: center;
 
   max-width: 1530px;
-  padding-left: 60px;
-  padding-right: 60px;
 }
 
 .page-header__logo {
@@ -46,6 +47,10 @@
 }
 
 @media (max-width: $tablet-width) {
+  .page-header {
+    margin-top: 20px;
+  }
+
   .page-header__container {
     padding-left: 24px;
     padding-right: 24px;
@@ -61,6 +66,10 @@
 }
 
 @media (max-width: $mobile-width) {
+  .page-header {
+    margin-top: 16px;
+  }
+
   .page-header__container {
     padding-left: 17px;
     padding-right: 15px;

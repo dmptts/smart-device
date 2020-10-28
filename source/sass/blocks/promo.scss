@@ -1,7 +1,211 @@
 .promo {
-  min-height: 878px;
+  margin-top: -85px;
 
-  background-image: url("../../img/bg-main-desktop@1x.jpg");
-  background-size: cover;
+  background-color: #1b2d37;
+  background-image: url("../img/bg-board-desktop@1x.png"), url("../img/bg-triangles.svg"), url("../img/bg-main-desktop@1x.jpg");
+  background-size: 705px 515px, 671px 642px, cover;
   background-repeat: no-repeat;
+  background-position: 1038px 258px, 1030px 117px, top left;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-board-desktop@2x.png"), url("../img/bg-triangles.svg"), url("../img/bg-main-desktop@2x.jpg");
+  }
+
+  @media (max-width: 1439px) {
+    background-position: 838px 258px, 830px 117px, top left;
+  }
+}
+
+.promo__container {
+  position: relative;
+  max-width: 1542px;
+  padding-top: 313px;
+  padding-bottom: 275px;
+}
+
+.promo h1 {
+  margin: 0;
+  margin-bottom: 29px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 80px;
+  line-height: 94px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 5.6px;
+}
+
+.promo p {
+  position: relative;
+
+  width: 780px;
+  margin: 0;
+  margin-bottom: 44px;
+  padding-left: 98px;
+
+  font-size: 22px;
+  line-height: 34px;
+  color: #ffffff;
+  text-transform: lowercase;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 17px;
+    left: 4px;
+
+    width: 66px;
+    height: 2px;
+
+    background-color: #ffffff;
+  }
+}
+
+.promo__btn {
+  width: 407px;
+  margin-left: 98px;
+  padding-top: 17px;
+  padding-bottom: 19px;
+
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+
+  background-color: $color-blue;
+  border: none;
+
+  &:hover {
+    background-color: darken($color-blue, 7%);
+  }
+
+  &:active {
+    background-color: darken($color-blue, 15%);
+  }
+}
+
+.promo__link {
+  position: absolute;
+  bottom: 127px;
+  left: 26px;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(255, 255, 255, 0.5);
+
+  transform: rotate(-90deg);
+
+  &:hover {
+    color: #ffffff;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .promo {
+    margin-top: -72px;
+
+    background-image: url("../img/bg-board-tablet@1x.png"), url("../img/bg-triangles.svg"), url("../img/bg-main-tablet@1x.jpg");
+    background-size: 465px 340px, 528px 505px, cover;
+    background-position: 510px 113px, 440px -39px, center;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-board-tablet@2x.png"), url("../img/bg-triangles.svg"), url("../img/bg-main-tablet@2x.jpg");
+    }
+  }
+
+  .promo__container {
+    padding-top: 187px;
+    padding-bottom: 163px;
+    padding-left: 88px;
+    padding-right: 88px;
+  }
+
+  .promo h1 {
+    width: 470px;
+    margin-bottom: 31px;
+
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 4.4px;
+  }
+
+  .promo p {
+    width: 410px;
+    margin-bottom: 54px;
+    padding-left: 52px;
+
+    font-size: 18px;
+    line-height: 28px;
+
+    &::before {
+      top: 15px;
+      left: 3px;
+
+      width: 33px;
+    }
+  }
+
+  .promo__btn {
+    width: 379px;
+    margin-left: 51px;
+  }
+
+  .promo__link {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .promo {
+    margin-top: -68px;
+
+    background-image: url("../img/bg-board-mobile@1x.png"), url("../img/bg-triangles.svg"), url("../img/bg-main-mobile@1x.jpg");
+    background-size: 301px 220px, 505px 482px, cover;
+    background-position: top 106px right -7px, top -32px right -337px, center;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-board-mobile@2x.png"), url("../img/bg-triangles.svg"), url("../img/bg-main-mobile@2x.jpg");
+    }
+
+    @media (min-width: 640px) {
+      background-position: top 106px right 43px, top -32px right -287px, center;
+    }
+  }
+
+  .promo__container {
+    padding-top: 300px;
+    padding-bottom: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .promo h1 {
+    width: auto;
+    margin-bottom: 25px;
+
+    font-size: 40px;
+    line-height: 47px;
+    letter-spacing: 2.7px;
+  }
+
+  .promo p {
+    width: auto;
+    margin-bottom: 42px;
+
+    font-size: 16px;
+    line-height: 25px;
+
+    &::before {
+      top: 17px;
+    }
+  }
+
+  .promo__btn {
+    width: auto;
+    margin-left: 3px;
+  }
 }
