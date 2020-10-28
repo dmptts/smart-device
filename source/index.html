@@ -13,9 +13,9 @@
       <a class="page-header__logo">
         <picture>
           <!-- 1x: 38x38; 2x: 76x76; -->
-          <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
+          <source media="(max-width: 767px)" srcset="img/logo-header-mobile.png 1x, img/logo-header-mobile@2x.png 2x">
           <!-- 1x: 202x52; 2x: 404x104; -->
-          <img src="img/logo-desktop.svg" width="202" height="52" alt="Логотип &#171;Smart Device&#187;">
+          <img src="img/logo-header-desktop.png" srcset="img/logo-header-desktop@2x.png 2x" width="202" height="52" alt="Логотип &#171;Smart Device&#187;">
         </picture>
       </a>
       <address class="page-header__contacts contacts">
@@ -131,60 +131,86 @@
   <footer class="page-footer">
     <div class="page-footer__container">
       <div class="page-footer__top">
-        <a class="page-footer__logo">
-          <img src="img/logo-desktop.svg" width="216" height="52" alt="Логотип &#171;Smart Device&#187;">
-        </a>
+        <div class="page-footer__top-container">
+          <a class="page-footer__logo">
+            <!-- 1x: 216x52; 2x: 432x104 -->
+            <img src="img/logo-footer@1x.png" srcset="img/logo-footer@2x.png 2x" width="216" height="52" alt="Логотип &#171;Smart Device&#187;">
+          </a>
 
-        <ul class="page-footer__social social">
-          <li class="social__item">
-            <a href="#" class="social__link social__link--facebook">Facebook</a>
-          </li>
-          <li class="social__item">
-            <a href="" class="social__link social__link--odnoklassniki">Одноклассники</a>
-          </li>
-          <li class="social__item">
-            <a href="" class="social__link social__link--vkontakte">ВКонтакте</a>
-          </li>
-        </ul>
+          <ul class="page-footer__social">
+            <li class="page-footer__social-item">
+              <a href="#" class="page-footer__social-link">
+                <!-- 1x: 27x27; 2x: 54x54 -->
+                <svg class="page-footer__social-icon" width="27" height="27">
+                  <use xlink:href="img/sprite_auto.svg#icon-facebook"></use>
+                </svg>
+                Facebook
+              </a>
+            </li>
+            <li class="page-footer__social-item">
+              <a href="" class="page-footer__social-link">
+                <!-- 1x: 27x27; 2x: 54x54 -->
+                <svg class="page-footer__social-icon" width="27" height="27">
+                  <use xlink:href="img/sprite_auto.svg#icon-odnoklassniki"></use>
+                </svg>
+                Одноклассники
+              </a>
+            </li>
+            <li class="page-footer__social-item">
+              <a href="" class="page-footer__social-link">
+                <!-- 1x: 27x27; 2x: 54x54 -->
+                <svg class="page-footer__social-icon" width="27" height="27">
+                  <use xlink:href="img/sprite_auto.svg#icon-vk"></use>
+                </svg>
+                ВКонтакте
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="page-footer__middle">
-        <nav class="page-footer__nav">
-          <h2 class="page-footer__heading">Разделы сайта</h2>
-          <ul class="page-footer__nav-list">
-            <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">О компании</a>
-            </li>
-            <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Продукты</a>
-            </li>
-            <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Производство печатных плат</a>
-            </li>
-            <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Монтаж печатных плат</a>
-            </li>
-            <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Комплектующие</a>
-            </li>
-            <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Доставка</a>
-            </li>
-            <li class="page-footer__nav-item">
-              <a href="#" class="page-footer__nav-link">Контакты</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="page-footer__middle-container">
+          <nav class="page-footer__nav">
+            <h2 class="page-footer__heading">Разделы сайта</h2>
+            <ul class="page-footer__nav-list">
+              <li class="page-footer__nav-item page-footer__nav-item--about">
+                <a href="#" class="page-footer__nav-link">О компании</a>
+              </li>
+              <li class="page-footer__nav-item page-footer__nav-item--products">
+                <a href="#" class="page-footer__nav-link">Продукты</a>
+              </li>
+              <li class="page-footer__nav-item page-footer__nav-item--production">
+                <a href="#" class="page-footer__nav-link">Производство печатных плат</a>
+              </li>
+              <li class="page-footer__nav-item page-footer__nav-item--assembling">
+                <a href="#" class="page-footer__nav-link">Монтаж печатных плат</a>
+              </li>
+              <li class="page-footer__nav-item page-footer__nav-item--accessories">
+                <a href="#" class="page-footer__nav-link">Комплектующие</a>
+              </li>
+              <li class="page-footer__nav-item page-footer__nav-item--delievery">
+                <a href="#" class="page-footer__nav-link">Доставка</a>
+              </li>
+              <li class="page-footer__nav-item page-footer__nav-item--contacts">
+                <a href="#" class="page-footer__nav-link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
 
-        <address class="page-footer__contacts">
-          <p class="page-footer__contacts-address">г. Мытищи, Олимпийский проспект, д.10</p>
-          <a href="tel:+74955894050" class="page-footer__contacts-link">+7 (495) 589-40-50</a>
-          <a href="tel:+79250038767" class="page-footer__contacts-link">+7 (925) 003-87-67</a>
-          <a href="tel:+792692608079" class="page-footer__contacts-link">+7 (926) 926-080-79</a>
-        </address>
+          <section class="page-footer__contacts">
+            <h2 class="page-footer__heading">Наш офис</h2>
+            <p class="page-footer__address">г. Мытищи, Олимпийский проспект, д.10</p>
+            <a href="tel:+74955894050" class="page-footer__contacts-link">+7 (495) 589-40-50</a>
+            <a href="tel:+79250038767" class="page-footer__contacts-link">+7 (925) 003-87-67</a>
+            <a href="tel:+792692608079" class="page-footer__contacts-link">+7 (926) 926-080-79</a>
+          </section>
+        </div>
       </div>
+    </div>
 
-      <div class="page-footer__bottom">
+    <div class="page-footer__bottom">
+      <div class="page-footer__bottom-container">
         <div class="page-footer__copyright">
           <p class="page-footer__copyright-text page-footer__copyright-text--rights">Все права защищены</p>
           <p class="page-footer__copyright-text">1999-2018 SD Service Devices</p>

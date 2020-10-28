@@ -1,0 +1,287 @@
+.page-footer {
+  padding-top: 65px;
+  border-top: 1px solid black;
+}
+
+.page-footer__container {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 1536px;
+  margin: 0 auto;
+  padding-bottom: 56px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.page-footer__top {
+  flex-shrink: 0;
+
+  margin-right: 200px;
+}
+
+.page-footer__logo {
+  display: block;
+  margin-bottom: 48px;
+}
+
+.page-footer__logo img {
+  width: 216px;
+  height: 52px;
+}
+
+.page-footer__social {
+  @include list-reset;
+  display: flex;
+}
+
+.page-footer__social-link {
+  display: block;
+  margin-right: 15px;
+
+  font-size: 0;
+  line-height: 0;
+
+  &:hover .page-footer__social-icon {
+    fill: darken(#cdcdcd, 7%);
+  }
+
+  &:active .page-footer__social-icon {
+    fill: lighten(#cdcdcd, 7%);
+  }
+}
+
+.page-footer__social-icon {
+  width: 27px;
+  height: 27px;
+
+  fill: #cdcdcd;
+}
+
+.page-footer__middle {
+  max-width: 994px;
+  flex-grow: 1;
+}
+
+.page-footer__middle-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-footer__heading {
+  margin-top: -1px;
+  margin-bottom: 24px;
+  margin-left: 2px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #1b2d37;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.page-footer__nav {
+  flex-basis: 308px;
+  flex-grow: 1;
+
+  max-width: 558px;
+  margin-right: 30px;
+}
+
+.page-footer__nav-list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.page-footer__nav-item {
+  width: 250px;
+
+  line-height: 0;
+}
+
+.page-footer__nav-link {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  color: rgba(27, 45, 55, 0.5);
+
+  &:hover {
+    color: rgba(27, 45, 55, 1);
+  }
+
+  &:active {
+    color: rgba(27, 45, 55, 0.2);
+  }
+}
+
+.page-footer__contacts {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 337px;
+  margin-right: 4px;
+}
+
+.page-footer__address {
+  margin: 0;
+  margin-bottom: 2px;
+
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba(27, 45, 55, 0.5);
+}
+
+.page-footer__contacts-link {
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba(27, 45, 55, 0.5);
+
+  &:hover {
+    color: rgba(27, 45, 55, 1);
+  }
+
+  &:active {
+    color: rgba(27, 45, 55, 0.2);
+  }
+}
+
+.page-footer__bottom {
+  border-top: 1px solid rgba(98, 105, 98, 0.2);
+}
+
+.page-footer__bottom-container {
+  display: flex;
+
+  max-width: 1536px;
+  margin: 0 auto;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.page-footer__copyright {
+  display: flex;
+  justify-content: space-between;
+
+  width: 457px;
+  margin-right: 142px;
+}
+
+.page-footer__copyright-text {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: rgba(27, 45, 55, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.page-footer__privacy {
+  display: block;
+  margin-right: auto;
+
+
+  font-size: 13px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: rgba(27, 45, 55, 0.5);
+  text-align: center;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    color: rgba(27, 45, 55, 1);
+  }
+
+  &:active {
+    color: rgba(27, 45, 55, 0.2);
+  }
+}
+
+.page-footer__developer {
+  margin-right: 4px;
+
+  font-size: 13px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: rgba(27, 45, 55, 0.5);
+  text-align: center;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    color: rgba(27, 45, 55, 1);
+  }
+
+  &:active {
+    color: rgba(27, 45, 55, 0.2);
+  }
+}
+
+@media (min-width: 1403px) {
+  .page-footer__nav-item {
+    &--about {
+      order: 1;
+    }
+
+    &--products {
+      order: 3;
+    }
+
+    &--production {
+      order: 5;
+    }
+
+    &--assembling {
+      order: 7;
+    }
+
+    &--accessories {
+      order: 2;
+    }
+
+    &--delievery {
+      order: 4;
+    }
+
+    &--contacts {
+      order: 6;
+    }
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .page-footer {
+    padding-top: 0;
+  }
+
+  .page-footer__container {
+    flex-direction: column;
+
+    padding: 0;
+  }
+
+  .page-footer__top {
+    width: auto;
+  }
+
+  .page-footer__top-container {
+    width: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .page-footer__middle {
+    width: auto;
+  }
+
+  .page-footer__middle-container {
+    width: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
