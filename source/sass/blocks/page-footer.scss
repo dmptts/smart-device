@@ -22,7 +22,9 @@
 
 .page-footer__logo {
   display: block;
-  margin-bottom: 48px;
+  margin-bottom: 53px;
+
+  line-height: 0;
 }
 
 .page-footer__logo img {
@@ -35,9 +37,16 @@
   display: flex;
 }
 
+.page-footer__social-item {
+  margin-right: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .page-footer__social-link {
   display: block;
-  margin-right: 15px;
 
   font-size: 0;
   line-height: 0;
@@ -70,7 +79,7 @@
 
 .page-footer__heading {
   margin-top: -1px;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   margin-left: 2px;
 
   font-family: "Roboto Condensed", "Arial", sans-serif;
@@ -106,7 +115,7 @@
 .page-footer__nav-link {
   font-family: "PT Mono", "Arial", sans-serif;
   font-size: 15px;
-  line-height: 26px;
+  line-height: 25px;
   color: rgba(27, 45, 55, 0.5);
 
   &:hover {
@@ -128,7 +137,6 @@
 
 .page-footer__address {
   margin: 0;
-  margin-bottom: 2px;
 
   font-size: 15px;
   line-height: 25px;
@@ -256,23 +264,38 @@
 
 @media (max-width: $tablet-width) {
   .page-footer {
+    justify-content: flex-start;
+
     padding-top: 0;
   }
 
   .page-footer__container {
     flex-direction: column;
+    align-items: stretch;
 
     padding: 0;
   }
 
   .page-footer__top {
     width: auto;
+    margin: 0;
   }
 
   .page-footer__top-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
     width: auto;
+    padding-top: 19px;
+    padding-bottom: 25px;
     padding-left: 25px;
-    padding-right: 25px;
+    padding-right: 23px;
+  }
+
+  .page-footer__logo {
+    margin: 0;
   }
 
   .page-footer__middle {
@@ -281,7 +304,35 @@
 
   .page-footer__middle-container {
     width: auto;
+    padding-top: 40px;
+    padding-bottom: 35px;
     padding-left: 25px;
     padding-right: 25px;
+  }
+
+  .page-footer__contacts {
+    margin-right: 10px;
+  }
+
+  .page-footer__bottom-container {
+    justify-content: space-between;
+
+    padding-top: 21px;
+    padding-bottom: 25px;
+    padding-left: 28px;
+    padding-right: 20px;
+  }
+
+  .page-footer__copyright {
+    display: none;
+  }
+
+  .page-footer__copyright-text--owner {
+    margin-right: -14px;
+    margin-bottom: -5px;
+  }
+
+  .page-footer__privacy {
+    margin: 0;
   }
 }
