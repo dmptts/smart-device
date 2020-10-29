@@ -4,6 +4,7 @@
   var MOBILE_WIDTH = 767;
   var TABLET_WIDTH = 1023;
 
+  var pageFooter = document.querySelector('.page-footer');
   var currentVersion;
 
   var getCurrentVersion = function () {
@@ -20,9 +21,14 @@
     if (currentVersion === 'mobile') {
       window.promo.switchPromoBtnText(currentVersion);
       window.footer.replaceCopyright(currentVersion);
+      window.footer.toggleAccordions(currentVersion);
     } else if (currentVersion === 'tablet') {
       window.footer.replaceCopyright(currentVersion);
     }
+  };
+
+  var initPage = function () {
+    pageFooter.classList.remove('page-footer--no-js');
   };
 
   window.addEventListener('resize', function (evt) {
@@ -33,9 +39,11 @@
     if (pastVersion !== currentVersion) {
       window.promo.switchPromoBtnText(currentVersion);
       window.footer.replaceCopyright(currentVersion);
+      window.footer.toggleAccordions(currentVersion);
     }
   });
 
+  initPage();
   getCurrentVersion();
   checkNeedToChangeElems();
 })();

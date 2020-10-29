@@ -6,10 +6,12 @@
   var promoBtnMobileText = 'Бесплатная консультация';
 
   var switchPromoBtnText = function (currentVersion) {
-    if (currentVersion === 'mobile') {
-      promoBtn.textContent = promoBtnMobileText;
-    } else {
-      promoBtn.textContent = promoBtnDesktopText;
+    if (promoBtn) {
+      if (currentVersion === 'mobile') {
+        promoBtn.textContent = promoBtnMobileText;
+      } else {
+        promoBtn.textContent = promoBtnDesktopText;
+      }
     }
   };
 
