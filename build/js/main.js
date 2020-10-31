@@ -1,6 +1,57 @@
 'use strict';
 
 (function () {
+  var PARAGRAPH_LENGTH = 205;
+  var about = document.querySelector('.about');
+  var aboutParagraphs = about.querySelectorAll('p');
+  var uncutParagraphs = [];
+
+  var checkParagraphs = function (currentVersion) {
+    if (about && aboutParagraphs) {
+      for (var i = 0; i < aboutParagraphs.length; i++) {
+        if (currentVersion !== 'desktop' && checkLength(aboutParagraphs[i])) {
+          cutString(aboutParagraphs[i]);
+        } else if (currentVersion === 'desktop') {
+          returnUncutParagraphs(aboutParagraphs[i], i);
+        }
+      }
+    }
+  };
+
+  var checkLength = function (paragraph) {
+    if (paragraph.innerText.length > PARAGRAPH_LENGTH) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  var cutString = function (paragraph) {
+    paragraph.innerText = paragraph.innerText.substr(0, PARAGRAPH_LENGTH);
+    paragraph.innerText = paragraph.innerText.slice(0, paragraph.innerText.lastIndexOf(' '));
+    paragraph.innerText = paragraph.innerText += '..';
+  };
+
+  var returnUncutParagraphs = function (paragraph, i) {
+    paragraph.innerText = uncutParagraphs[i];
+  };
+
+  var saveUncutParagraphs = function () {
+    for (var i = 0; i < aboutParagraphs.length; i++) {
+      uncutParagraphs.push(aboutParagraphs[i].innerText);
+    }
+  };
+
+  if (about && aboutParagraphs) {
+    saveUncutParagraphs();
+  }
+
+  window.about = {
+    checkParagraphs: checkParagraphs
+  };
+})();
+
+(function () {
 
   var copyrightOwnerElem = document.querySelector('.page-footer__copyright-text--owner');
   var socialBlock = document.querySelector('.page-footer__social');
@@ -117,12 +168,19 @@
   };
 
   var checkNeedToChangeElems = function () {
-    if (currentVersion === 'mobile') {
-      window.promo.switchPromoBtnText(currentVersion);
-      window.footer.replaceCopyright(currentVersion);
-      window.footer.toggleAccordions(currentVersion);
-    } else if (currentVersion === 'tablet') {
-      window.footer.replaceCopyright(currentVersion);
+    switch (currentVersion) {
+      case 'mobile':
+        window.promo.switchPromoBtnText(currentVersion);
+        window.footer.replaceCopyright(currentVersion);
+        window.footer.toggleAccordions(currentVersion);
+        window.about.checkParagraphs(currentVersion);
+        break;
+      case 'tablet':
+        window.footer.replaceCopyright(currentVersion);
+        window.about.checkParagraphs(currentVersion);
+        break;
+      default:
+        break;
     }
   };
 
@@ -139,6 +197,7 @@
       window.promo.switchPromoBtnText(currentVersion);
       window.footer.replaceCopyright(currentVersion);
       window.footer.toggleAccordions(currentVersion);
+      window.about.checkParagraphs(currentVersion);
     }
   });
 

@@ -1,0 +1,125 @@
+.about__container {
+  position: relative;
+
+  max-width: 1290px;
+  padding-bottom: 110px;
+  padding-left: 240px;
+  padding-right: 65px;
+
+  background-image: url("../img/bg-year-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-size: 220px 318px;
+  background-position: top 5px left 30px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-year-desktop@2x.png");
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    z-index: -1;
+
+    width: 872px;
+    height: 873px;
+
+    background-image: url("../img/bg-triangle-points.svg");
+    background-repeat: no-repeat;
+    background-size: 872px 873px;
+    background-position: center;
+  }
+
+  &::before {
+    top: -399px;
+    left: -611px;
+  }
+
+  &::after {
+    top: -701px;
+    left: 243px;
+
+    transform: rotate(180deg);
+  }
+}
+
+.about h2 {
+  margin: 0;
+  margin-bottom: 23px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  color: #666666;
+}
+
+.about p {
+  margin: 0;
+  margin-bottom: 19px;
+
+  &:last-of-type {
+    margin-bottom: 39px;
+  }
+}
+
+.about__btn {
+  width: 180px;
+}
+
+@media (max-width: $tablet-width) {
+  .about__container {
+    padding-bottom: 83px;
+    padding-left: 213px;
+    padding-right: 25px;
+
+    background-image: url("../img/bg-year-tablet@1x.png");
+    background-size: 246px 361px;
+    background-position: top -6px left -1px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-year-tablet@2x.png");
+    }
+  }
+
+  .about h2 {
+    margin-bottom: 31px;
+
+    font-size: 32px;
+    line-height: 35px;
+  }
+
+  .about p:last-of-type {
+    margin-bottom: 42px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .about__container {
+    padding-left: 17px;
+    padding-right: 15px;
+
+    background-image: none;
+
+    &::after {
+      top: -601px;
+      left: -121px;
+    }
+  }
+
+  .about h2 {
+    margin-left: -3px;
+    margin-bottom: 22px;
+
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .about p {
+    margin-bottom: 39px;
+  }
+
+  .about p:last-of-type {
+    margin-bottom: 29px;
+  }
+}

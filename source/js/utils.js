@@ -18,12 +18,19 @@
   };
 
   var checkNeedToChangeElems = function () {
-    if (currentVersion === 'mobile') {
-      window.promo.switchPromoBtnText(currentVersion);
-      window.footer.replaceCopyright(currentVersion);
-      window.footer.toggleAccordions(currentVersion);
-    } else if (currentVersion === 'tablet') {
-      window.footer.replaceCopyright(currentVersion);
+    switch (currentVersion) {
+      case 'mobile':
+        window.promo.switchPromoBtnText(currentVersion);
+        window.footer.replaceCopyright(currentVersion);
+        window.footer.toggleAccordions(currentVersion);
+        window.about.checkParagraphs(currentVersion);
+        break;
+      case 'tablet':
+        window.footer.replaceCopyright(currentVersion);
+        window.about.checkParagraphs(currentVersion);
+        break;
+      default:
+        break;
     }
   };
 
@@ -40,6 +47,7 @@
       window.promo.switchPromoBtnText(currentVersion);
       window.footer.replaceCopyright(currentVersion);
       window.footer.toggleAccordions(currentVersion);
+      window.about.checkParagraphs(currentVersion);
     }
   });
 

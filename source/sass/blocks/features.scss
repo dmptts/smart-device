@@ -1,13 +1,9 @@
-.features {
-  overflow: hidden;
-}
-
 .features__container {
   position: relative;
 
   max-width: 1290px;
   padding-top: 112px;
-  padding-bottom: 110px;
+  padding-bottom: 104px;
 
   &::before,
   &::after {
@@ -19,6 +15,7 @@
     height: 324px;
 
     background-image: url("../img/bg-triangle.svg");
+    background-repeat: no-repeat;
     background-size: 336px 324px;
     background-position: center;
   }
@@ -184,6 +181,7 @@
 @media (max-width: $mobile-width) {
   .features__container {
     padding-top: 37px;
+    padding-bottom: 36px;
   }
 
   .features ul {
