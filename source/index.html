@@ -119,28 +119,34 @@
       </div>
     </section>
 
-    <section id="callback" class="callback">
-      <div class="callback__container container">
-        <h2 class="visually-hidden">Обратная связь</h2>
-        <b>Остались вопросы? Задайте их нам!</b>
-        <p>Мы проконсультируем Вас бесплатно</p>
+    <div class="main-content__wrapper">
+      <section id="callback" class="callback">
+        <div class="callback__container container">
+          <h2 class="visually-hidden">Обратная связь</h2>
+          <b>Остались вопросы? Задайте их нам!</b>
+          <p>Мы проконсультируем Вас бесплатно</p>
 
-        <form action="post" class="callback__form">
-          <label for="name" class="visually-hidden">Ваше имя:</label>
-          <input type="text" name="name-field" id="name" placeholder="Имя">
+          <form action="post" class="callback__form">
+            <div class="callback__form-wrapper">
+              <label for="name" class="visually-hidden">Ваше имя:</label>
+              <input type="text" name="name-field" id="name" placeholder="Имя" pattern="([а-яА-яa-zA-zё]+[\s\-]?)+([а-яА-яa-zA-zё]+[\s\-]?)?" required>
 
-          <label for="phone" class="visually-hidden">Ваш номер телефона:</label>
-          <input type="tel" name="phone-field" id="phone" placeholder="Телефон">
+              <label for="phone" class="visually-hidden">Ваш номер телефона:</label>
+              <input type="tel" name="phone-field" id="phone" placeholder="Телефон" pattern="\+7\(\d{3}\)\d{7}" required>
+            </div>
 
-          <label for="question" class="visually-hidden">Ваш вопрос:</label>
-          <textarea name="question-field" id="question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+            <label for="question" class="visually-hidden">Ваш вопрос:</label>
+            <textarea name="question-field" id="question" cols="30" rows="10" placeholder="Ваш вопрос" required></textarea>
 
-          <label for="agreement">Я согласен на обработку  персональных данных</label>
-          <input type="checkbox" name="agreement-field" id="agreement">
-          <button type="submit">Задать вопрос</button>
-        </form>
-      </div>
-    </section>
+            <div class="callback__form-wrapper">
+              <input class="visually-hidden" type="checkbox" name="agreement-field" id="agreement" required>
+              <label for="agreement">Я согласен на обработку  персональных данных</label>
+              <button class="callback__btn btn" type="submit">Задать вопрос</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="page-footer page-footer--no-js">
@@ -258,6 +264,7 @@
     </form>
   </div>
   <div class="popup-overlay"></div>
+  <script src="js/vendor.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

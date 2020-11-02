@@ -16,7 +16,8 @@ var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
 var concat = require("gulp-concat");
-var replace = require('gulp-replace');
+var replace = require("gulp-replace");
+var imask = require("imask");
 
 gulp.task("css", function () {
   return gulp.src("source/sass/style.scss")
