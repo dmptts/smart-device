@@ -133,9 +133,9 @@
 (function () {
   var isStorageSupport = true;
   var callbackForm = document.querySelector('.callback__form');
-  var nameInput = document.getElementById('name');
-  var phoneInput = document.getElementById('phone');
-  var questionInput = callbackForm.querySelector('textarea');
+  var callbackPhoneInput = callbackForm.querySelector('input[name="phone-field"');
+  var callbackAgreementCheckbox = callbackForm.querySelector('input[name="agreement-field"');
+  var callbackAgreementCheckboxLabel = callbackForm.querySelector('label[for="agreement"]');
 
   var checkLocalStorage = function () {
     try {
@@ -145,51 +145,41 @@
     }
   };
 
-  var saveToLocalStorage = function () {
+  var saveToLocalStorage = function (form) {
     if (isStorageSupport) {
-      localStorage.setItem('name', nameInput.value);
-      localStorage.setItem('phone', phoneInput.value);
-      localStorage.setItem('question', questionInput.value);
+      localStorage.setItem('name', form.querySelector('input[name="name-field"]').value);
+      localStorage.setItem('phone', form.querySelector('input[name="phone-field"]').value);
+      localStorage.setItem('question', form.querySelector('textarea[name="question-field"]').value);
     }
   };
 
-  var fillInputs = function () {
+  var fillInputs = function (form) {
     if (isStorageSupport) {
-      nameInput.value = localStorage.getItem('name');
-      phoneInput.value = localStorage.getItem('phone');
-      questionInput.value = localStorage.getItem('question');
+      form.querySelector('input[name="name-field"]').value = localStorage.getItem('name');
+      form.querySelector('input[name="phone-field"]').value = localStorage.getItem('phone');
+      form.querySelector('textarea[name="question-field"]').value = localStorage.getItem('question');
     }
   };
 
-  var onPhoneInputFocus = function () {
+  var addPhonePrefix = function (phoneInput) {
     if (phoneInput.value === '') {
       phoneInput.value = '+7(';
     }
-    phoneInput.addEventListener('blur', onPhoneInputBlur);
-    phoneInput.addEventListener('keydown', onPhoneInputKeydown);
-    phoneInput.addEventListener('change', onPhoneInputChange);
-    phoneInput.removeEventListener('focus', onPhoneInputFocus);
   };
 
-  var onPhoneInputBlur = function () {
+  var removePhonePrefix = function (phoneInput) {
     if (phoneInput.value === '+7(') {
       phoneInput.value = '';
     }
-    phoneInput.addEventListener('focus', onPhoneInputFocus);
-    phoneInput.removeEventListener('blur', onPhoneInputBlur);
-    phoneInput.removeEventListener('keydown', onPhoneInputKeydown);
-    phoneInput.removeEventListener('change', onPhoneInputChange);
   };
 
-  var onPhoneInputKeydown = function () {
-    if (phoneInput.value === '') {
-      phoneInput.value = '+7(';
-    } else if (phoneInput.value.length === 6) {
+  var addClosingBracket = function (phoneInput) {
+    if (phoneInput.value.length === 6) {
       phoneInput.value += ')';
     }
   };
 
-  var onPhoneInputChange = function () {
+  var validatePhoneInput = function (phoneInput) {
     phoneInput.setCustomValidity('');
 
     if (!phoneInput.checkValidity()) {
@@ -197,16 +187,203 @@
     }
   };
 
-  if (phoneInput) {
-    phoneInput.addEventListener('focus', onPhoneInputFocus);
-  }
+  var onPhoneInputFocus = function () {
+    addPhonePrefix(callbackPhoneInput);
+    callbackPhoneInput.addEventListener('blur', onPhoneInputBlur);
+    callbackPhoneInput.addEventListener('keydown', onPhoneInputKeydown);
+    callbackPhoneInput.addEventListener('change', onPhoneInputChange);
+    callbackPhoneInput.removeEventListener('focus', onPhoneInputFocus);
+  };
+
+  var onPhoneInputBlur = function () {
+    removePhonePrefix(callbackPhoneInput);
+    callbackPhoneInput.addEventListener('focus', onPhoneInputFocus);
+    callbackPhoneInput.removeEventListener('blur', onPhoneInputBlur);
+    callbackPhoneInput.removeEventListener('keydown', onPhoneInputKeydown);
+    callbackPhoneInput.removeEventListener('change', onPhoneInputChange);
+  };
+
+  var onPhoneInputKeydown = function (evt) {
+    if (evt.key !== 'Backspace') {
+      addPhonePrefix(callbackPhoneInput);
+      addClosingBracket(callbackPhoneInput);
+    }
+  };
+
+  var onPhoneInputChange = function () {
+    validatePhoneInput(callbackPhoneInput);
+  };
+
+  var toggleCheckboxState = function (checkbox) {
+    if (!checkbox.checked) {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
+  };
+
+  var onCallbackFormSubmit = function () {
+    saveToLocalStorage(callbackForm);
+  };
+
+  var onAgreementCheckboxLabelEnterPress = function (evt) {
+    if (evt.key === 'Enter') {
+      toggleCheckboxState(callbackAgreementCheckbox);
+    }
+  };
 
   if (callbackForm) {
-    callbackForm.addEventListener('submit', saveToLocalStorage);
-    fillInputs();
+    callbackForm.addEventListener('submit', onCallbackFormSubmit);
+    fillInputs(callbackForm);
+  }
+
+  if (callbackPhoneInput) {
+    callbackPhoneInput.addEventListener('focus', onPhoneInputFocus);
+  }
+
+  if (callbackAgreementCheckbox && callbackAgreementCheckboxLabel) {
+    callbackAgreementCheckboxLabel.addEventListener('keydown', onAgreementCheckboxLabelEnterPress);
   }
 
   checkLocalStorage();
+
+  window.form = {
+    fillInputs: fillInputs,
+    saveToLocalStorage: saveToLocalStorage,
+    addPhonePrefix: addPhonePrefix,
+    removePhonePrefix: removePhonePrefix,
+    addClosingBracket: addClosingBracket,
+    validatePhoneInput: validatePhoneInput,
+    toggleCheckboxState: toggleCheckboxState
+  };
+})();
+
+(function () {
+  var pageBody = document.body;
+  var popup = document.querySelector('.popup');
+  var popupOverlay = document.querySelector('.popup-overlay');
+  var popupOpenBtn = document.querySelector('.page-header__btn');
+  var popupCloseBtn = popup.querySelector('.popup__close-btn');
+  var popupForm = popup.querySelector('.popup__form');
+  var popupNameInput = popupForm.querySelector('input[name="name-field"');
+  var popupPhoneInput = popupForm.querySelector('input[name="phone-field"');
+  var popupQuestionInput = popupForm.querySelector('textarea[name="question-field"');
+  var popupAgreementCheckbox = popupForm.querySelector('input[name="agreement-field"');
+  var popupAgreementCheckboxLabel = popupForm.querySelector('label[for="popup-agreement"]');
+
+  var openPopup = function () {
+    popup.classList.add('popup--opened');
+    popupOverlay.classList.add('popup-overlay--opened');
+    pageBody.classList.add('no-scroll');
+    popupOpenBtn.removeEventListener('click', onPopupOpenBtnClick);
+    popupCloseBtn.addEventListener('click', onPopupCloseBtnClick);
+    popupCloseBtn.addEventListener('keydown', onPopupCloseBtnEnterPress);
+    popupOverlay.addEventListener('click', onPopupOverlayClick);
+    popupForm.addEventListener('submit', onPopupFormSubmit);
+    popupPhoneInput.addEventListener('focus', onPopupPhoneInputFocus);
+    document.addEventListener('keydown', onDocumentEscPress);
+    window.form.fillInputs(popupForm);
+    popupAgreementCheckboxLabel.addEventListener('keydown', onPopupAgreementCheckboxLabelEnterPress);
+    placeFocus();
+  };
+
+  var closePopup = function () {
+    popup.classList.remove('popup--opened');
+    popupOverlay.classList.remove('popup-overlay--opened');
+    pageBody.classList.remove('no-scroll');
+    popupOpenBtn.addEventListener('click', onPopupOpenBtnClick);
+    popupCloseBtn.removeEventListener('click', onPopupCloseBtnClick);
+    popupCloseBtn.removeEventListener('keydown', onPopupCloseBtnEnterPress);
+    window.removeEventListener('keydown', onDocumentEscPress);
+    popupForm.removeEventListener('submit', onPopupFormSubmit);
+    popupPhoneInput.removeEventListener('focus', onPopupPhoneInputFocus);
+    popupAgreementCheckboxLabel.removeEventListener('keydown', onPopupAgreementCheckboxLabelEnterPress);
+  };
+
+  var onPopupOpenBtnClick = function () {
+    openPopup();
+  };
+
+  var onPopupOpenBtnEnterPress = function (evt) {
+    if (evt.key === 'Enter') {
+      openPopup();
+    }
+  };
+
+  var onPopupCloseBtnClick = function () {
+    closePopup();
+  };
+
+  var onPopupCloseBtnEnterPress = function (evt) {
+    if (evt.key === 'Enter') {
+      closePopup();
+    }
+  };
+
+  var onPopupOverlayClick = function () {
+    closePopup();
+  };
+
+  var onDocumentEscPress = function (evt) {
+    if (evt.key === 'Escape') {
+      evt.preventDefault();
+      closePopup();
+    }
+  };
+
+  var onPopupPhoneInputFocus = function () {
+    window.form.addPhonePrefix(popupPhoneInput);
+    popupPhoneInput.addEventListener('blur', onPopupPhoneInputBlur);
+    popupPhoneInput.addEventListener('keydown', onPopupPhoneInputKeydown);
+    popupPhoneInput.addEventListener('change', onPopupPhoneInputChange);
+    popupPhoneInput.removeEventListener('focus', onPopupPhoneInputFocus);
+  };
+
+  var onPopupPhoneInputBlur = function () {
+    window.form.removePhonePrefix(popupPhoneInput);
+    popupPhoneInput.addEventListener('focus', onPopupPhoneInputFocus);
+    popupPhoneInput.removeEventListener('blur', onPopupPhoneInputBlur);
+    popupPhoneInput.removeEventListener('keydown', onPopupPhoneInputKeydown);
+    popupPhoneInput.removeEventListener('change', onPopupPhoneInputChange);
+  };
+
+  var onPopupPhoneInputKeydown = function (evt) {
+    if (evt.key !== 'Backspace') {
+      window.form.addPhonePrefix(popupPhoneInput);
+      window.form.addClosingBracket(popupPhoneInput);
+    }
+  };
+
+  var onPopupPhoneInputChange = function () {
+    window.form.validatePhoneInput(popupPhoneInput);
+  };
+
+  var onPopupAgreementCheckboxLabelEnterPress = function (evt) {
+    if (evt.key === 'Enter') {
+      window.form.toggleCheckboxState(popupAgreementCheckbox);
+    }
+  };
+
+  var onPopupFormSubmit = function () {
+    window.form.saveToLocalStorage(popupForm);
+  };
+
+  var placeFocus = function () {
+    if (popupNameInput.value === '') {
+      popupNameInput.focus();
+    } else if (popupPhoneInput.value.length !== 14) {
+      popupPhoneInput.focus();
+    } else if (popupQuestionInput === '') {
+      popupQuestionInput.focus();
+    } else {
+      popupAgreementCheckboxLabel.focus();
+    }
+  };
+
+  if (popupOpenBtn && popup) {
+    popupOpenBtn.addEventListener('click', onPopupOpenBtnClick);
+    popupOpenBtn.addEventListener('keydown', onPopupOpenBtnEnterPress);
+  }
 })();
 
 (function () {

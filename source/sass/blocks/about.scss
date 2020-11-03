@@ -65,6 +65,16 @@
 
 .about__btn {
   width: 180px;
+
+  &:hover {
+    color: #ffffff;
+
+    background-color: $color-blue;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
 }
 
 @media (max-width: $tablet-width) {

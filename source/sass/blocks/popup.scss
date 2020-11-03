@@ -1,3 +1,189 @@
 .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+
   display: none;
+  width: 490px;
+  padding-top: 29px;
+  padding-bottom: 37px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  background-color: $color-blue;
+
+  transform: translate(-50%, -50%);
+
+  &--opened {
+    display: block;
+  }
+}
+
+.popup b {
+  display: block;
+  margin-bottom: 13px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 39px;
+  color: #ffffff;
+}
+
+.popup p {
+  width: 400px;
+  margin: 0;
+  margin-bottom: 33px;
+
+  color: #ffffff;
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.popup input[type="text"],
+.popup input[type="tel"],
+.popup textarea {
+  margin: 0;
+  margin-bottom: 32px;
+  padding-top: 14px;
+  padding-bottom: 18px;
+  padding-left: 23px;
+  padding-right: 17px;
+
+  color: #ffffff;
+
+  background-color: rgba(#ffffff, 0.1);
+  border: none;
+
+  &::placeholder {
+    color: #ffffff;
+  }
+
+  &:hover {
+    background-color: rgba(#ffffff, 0.3);
+  }
+}
+
+.popup textarea {
+  height: 104px;
+  margin-bottom: 29px;
+}
+
+.popup input[type="checkbox"] {
+  order: 1;
+}
+
+.popup input[type="checkbox"] + label {
+  position: relative;
+
+  order: 1;
+
+  margin-right: 32px;
+  padding-left: 48px;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(#ffffff, 0.8);
+
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 2px;
+    left: 0;
+
+    width: 16px;
+    height: 16px;
+
+    border: 1px solid #ffffff;
+  }
+
+  &:hover {
+    color: #ffffff;
+  }
+
+  &:active {
+    color: rgba(#ffffff, 0.5);
+  }
+}
+
+.popup input[type="checkbox"]:checked + label {
+  &::after {
+    position: absolute;
+    content: "";
+    top: 7px;
+    left: 4px;
+
+    width: 8px;
+    height: 5px;
+
+    background-image: url("../img/bg-checkmark.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.popup__submit-btn {
+  margin-bottom: 34px;
+  padding-top: 14px;
+  padding-bottom: 15px;
+
+  color: #ffffff;
+
+  border-color: #ffffff;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+}
+
+.popup__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+
+  width: 19px;
+  height: 19px;
+  margin: 0;
+  padding: 0;
+
+  font-size: 0;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: 9px;
+    left: -2px;
+
+    width: 23px;
+    height: 1px;
+
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
 }
