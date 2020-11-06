@@ -52,25 +52,24 @@
 })();
 
 (function () {
-
-  var copyrightOwnerElem = document.querySelector('.page-footer__copyright-text--owner');
   var socialBlock = document.querySelector('.page-footer__social');
   var footerTop = document.querySelector('.page-footer__top-container');
+  var footerBottom = document.querySelector('.page-footer__bottom-container');
   var copyrightBlock = document.querySelector('.page-footer__copyright');
   var nav = document.querySelector('.page-footer__nav');
-  var navHeading = document.querySelector('.page-footer__heading--nav');
+  var navHeading = document.querySelector('.page-footer__nav h2');
   var contacts = document.querySelector('.page-footer__contacts');
-  var contactsHeading = document.querySelector('.page-footer__heading--contacts');
+  var contactsHeading = document.querySelector('.page-footer__contacts h2');
 
   var replaceCopyright = function (currentVersion) {
-    if (copyrightOwnerElem && socialBlock && footerTop && copyrightBlock) {
+    if (socialBlock && footerTop && copyrightBlock) {
       var copyrightFragment = document.createDocumentFragment();
-      copyrightFragment.appendChild(copyrightOwnerElem);
+      copyrightFragment.appendChild(copyrightBlock);
 
       if (currentVersion === 'mobile' || currentVersion === 'tablet') {
         footerTop.insertBefore(copyrightFragment, socialBlock);
       } else {
-        copyrightBlock.appendChild(copyrightFragment);
+        footerBottom.prepend(copyrightFragment);
       }
     }
   };
