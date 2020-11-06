@@ -17,36 +17,38 @@
     position: absolute;
     content: "";
     top: -60px;
-    right: 744px;
+    right: -301px;
 
-    width: 686px;
+    width: 1731px;
     height: 647px;
 
-    background-image: url("../img/bg-paperplane-desktop@1x.png"), url("../img/bg-triangles.svg");
+    background-image: url("../img/bg-paperplane-desktop@1x.png"), url("../img/bg-triangles.svg"), url("../img/bg-triangle-opacity.svg");
     background-repeat: no-repeat;
-    background-size: 511px 288px, 671px 642px;
-    background-position: top 221px right, top left;
+    background-size: 511px 288px, 671px 642px, 263px 263px;
+    background-position: top 221px left 175px, top left, top 149px right;
   }
 
   &::after {
     position: absolute;
     content: "";
-    top: 94px;
-    left: 1328px;
+    top: 238px;
+    right: -392px;
 
-    width: 234px;
-    height: 234px;
+    width: 373px;
+    height: 373px;
 
     background-image: url("../img/bg-triangle.svg");
     background-repeat: no-repeat;
-    background-size: 263px;
+    background-size: 420px;
     opacity: 0.2;
+
+    transform: rotate(180deg);
   }
 }
 
 @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
   .callback__container::before {
-    background-image: url("../img/bg-paperplane-desktop@2x.png"), url("../img/bg-triangles.svg");
+    background-image: url("../img/bg-paperplane-desktop@2x.png"), url("../img/bg-triangles.svg"), url("../img/bg-triangle-opacity.svg");
   }
 }
 
@@ -71,28 +73,9 @@
 }
 
 .callback__form {
-  position: relative;
-
   display: flex;
   flex-direction: column;
   width: 570px;
-
-  &::after {
-    position: absolute;
-    content: "";
-    top: 13px;
-    right: -454px;
-
-    width: 373px;
-    height: 373px;
-
-    background-image: url("../img/bg-triangle.svg");
-    background-repeat: no-repeat;
-    background-size: 420px;
-    opacity: 0.2;
-
-    transform: rotate(180deg);
-  }
 }
 
 .callback__form-wrapper {

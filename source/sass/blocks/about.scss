@@ -2,6 +2,7 @@
   position: relative;
 
   max-width: 1290px;
+  padding-top: 50px;
   padding-bottom: 110px;
   padding-left: 240px;
   padding-right: 65px;
@@ -9,7 +10,7 @@
   background-image: url("../img/bg-year-desktop@1x.png");
   background-repeat: no-repeat;
   background-size: 220px 318px;
-  background-position: top 5px left 30px;
+  background-position: top 55px left 30px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/bg-year-desktop@2x.png");
@@ -31,12 +32,12 @@
   }
 
   &::before {
-    top: -399px;
+    top: -349px;
     left: -611px;
   }
 
   &::after {
-    top: -701px;
+    top: -651px;
     left: 243px;
 
     transform: rotate(180deg);
@@ -79,16 +80,22 @@
 
 @media (max-width: $tablet-width) {
   .about__container {
+    padding-top: 30px;
     padding-bottom: 83px;
     padding-left: 213px;
     padding-right: 25px;
 
     background-image: url("../img/bg-year-tablet@1x.png");
     background-size: 246px 361px;
-    background-position: top -6px left -1px;
+    background-position: top 24px left -1px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/bg-year-tablet@2x.png");
+    }
+
+    &::after {
+      top: -566px;
+      left: 210px;
     }
   }
 
@@ -106,6 +113,7 @@
 
 @media (max-width: $mobile-width) {
   .about__container {
+    padding-top: 15px;
     padding-bottom: 65px;
     padding-left: 17px;
     padding-right: 15px;
@@ -113,7 +121,7 @@
     background-image: none;
 
     &::after {
-      top: -601px;
+      top: -586px;
       left: -121px;
     }
   }

@@ -20,7 +20,7 @@
   position: relative;
   max-width: 1542px;
   padding-top: 313px;
-  padding-bottom: 275px;
+  padding-bottom: 87px;
 }
 
 .promo h1 {
@@ -65,6 +65,7 @@
 .promo__btn {
   width: 407px;
   margin-left: 98px;
+  margin-bottom: 166px;
   padding-top: 17px;
   padding-bottom: 19px;
 
@@ -85,14 +86,15 @@
 }
 
 .promo__link {
-  position: absolute;
-  bottom: 127px;
-  left: 26px;
+  display: inline-block;
+  margin-left: 20px;
 
   font-size: 14px;
   line-height: 16px;
   color: rgba(255, 255, 255, 0.5);
+  vertical-align: middle;
 
+  transform-origin: bottom left;
   transform: rotate(-90deg);
 
   &:hover {
@@ -151,6 +153,7 @@
 
   .promo__btn {
     width: 379px;
+    margin-bottom: 0;
     margin-left: 51px;
   }
 
