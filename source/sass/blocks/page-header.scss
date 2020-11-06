@@ -1,15 +1,10 @@
-.page-header {
-  position: relative;
-  z-index: 1;
-
-  margin-top: 33px;
-}
-
 .page-header__container {
   display: flex;
   align-items: center;
 
   max-width: 1530px;
+  padding-top: 33px;
+  padding-bottom: 33px;
 }
 
 .page-header__logo {
@@ -47,11 +42,9 @@
 }
 
 @media (max-width: $tablet-width) {
-  .page-header {
-    margin-top: 20px;
-  }
-
   .page-header__container {
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -66,11 +59,9 @@
 }
 
 @media (max-width: $mobile-width) {
-  .page-header {
-    margin-top: 16px;
-  }
-
   .page-header__container {
+    padding-top: 16px;
+    padding-bottom: 16px;
     padding-left: 17px;
     padding-right: 15px;
   }
