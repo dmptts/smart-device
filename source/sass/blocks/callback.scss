@@ -199,8 +199,8 @@
 
     padding-top: 78px;
     padding-bottom: 104px;
-    padding-left: 92px;
-    padding-right: 85px;
+    padding-left: 12%;
+    padding-right: 11%;
 
     &::before,
     &::after {
@@ -233,7 +233,12 @@
 
   .callback input[type="text"],
   .callback input[type="tel"] {
-    width: 280px;
+    flex-grow: 1;
+    width: auto;
+  }
+
+  .callback__form-wrapper input:nth-child(4n+4) {
+    margin-left: 33px;
   }
 
   .callback textarea {
@@ -248,12 +253,17 @@
   }
 
   .callback input[type="checkbox"] + label {
-    margin-right: 42px;
+    width: auto;
+    flex-basis: 366px;
+
+    margin-left: 40px;
+    margin-right: 0;
     padding-left: 34px;
   }
 
   .callback__btn {
-    width: 280px;
+    width: auto;
+    flex-basis: 377px;
   }
 }
 
@@ -281,6 +291,10 @@
     flex-direction: column;
   }
 
+  .callback__form-wrapper input:nth-child(4n+4) {
+    margin-left: 0;
+  }
+
   .callback input,
   .callback input[type="text"],
   .callback input[type="tel"],
@@ -306,11 +320,13 @@
   }
 
   .callback input[type="checkbox"] + label {
+    flex-basis: auto;
     width: 100%;
-    margin-right: 0;
+    margin-left: 0;
   }
 
   .callback__btn {
+    flex-basis: auto;
     width: 100%;
     margin-bottom: 30px;
   }
