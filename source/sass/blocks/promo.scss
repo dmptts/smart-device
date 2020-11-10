@@ -1,8 +1,20 @@
 .promo__container {
   position: relative;
-  max-width: 1542px;
+
+  max-width: 1566px;
   padding-top: 195px;
   padding-bottom: 87px;
+  padding-left: 72px;
+  padding-right: 72px;
+
+  background-image: url("../img/bg-board-desktop@1x.png"), url("../img/bg-triangles.svg");
+  background-size: 705px 515px, 671px 642px;
+  background-repeat: no-repeat;
+  background-position: 861px 140px, 853px -1px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/bg-board-desktop@2x.png"), url("../img/bg-triangles.svg");
+  }
 }
 
 .promo h1 {
@@ -90,10 +102,18 @@
 
 @media (max-width: $tablet-width) {
   .promo__container {
-    padding-top: 95px;
+    padding-top: 105px;
     padding-bottom: 163px;
     padding-left: 88px;
     padding-right: 88px;
+
+    background-image: url("../img/bg-board-tablet@1x.png"), url("../img/bg-triangles.svg");
+    background-size: 465px 340px, 528px 505px;
+    background-position: 510px 31px, 440px -121px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-board-tablet@2x.png"), url("../img/bg-triangles.svg");
+    }
   }
 
   .promo h1 {
@@ -138,10 +158,19 @@
     padding-bottom: 70px;
     padding-left: 15px;
     padding-right: 15px;
+
+    background-image: url("../img/bg-board-mobile@1x.png"), url("../img/bg-triangles.svg");
+    background-size: 301px 220px, 505px 482px;
+    background-position: top 22px right -7px, top -116px right -337px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/bg-board-mobile@2x.png"), url("../img/bg-triangles.svg");
+    }
   }
 
   .promo h1 {
     width: auto;
+    max-width: 500px;
     margin-bottom: 25px;
 
     font-size: 40px;
@@ -151,6 +180,7 @@
 
   .promo p {
     width: auto;
+    max-width: 500px;
     margin-bottom: 42px;
 
     font-size: 16px;
@@ -162,7 +192,7 @@
   }
 
   .promo__btn {
-    width: auto;
+    width: 290px;
     margin-left: 3px;
   }
 }
