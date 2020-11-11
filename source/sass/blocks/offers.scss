@@ -29,6 +29,9 @@
 .offers li {
   position: relative;
 
+  flex-basis: 281px;
+  flex-grow: 1;
+
   margin-bottom: 30px;
 
   line-height: 0;
@@ -58,6 +61,11 @@
 
     transform: rotate(45deg);
   }
+
+  &:nth-child(3n+2),
+  &:nth-child(3n+3) {
+    margin-left: 30px;
+  }
 }
 
 .offers a {
@@ -65,12 +73,12 @@
 
   display: block;
 
-  width: 370px;
+  width: 100%;
   min-height: 620px;
   padding-top: 50px;
   padding-bottom: 50px;
   padding-left: 44px;
-  padding-right: 155px;
+  padding-right: 44px;
 
   background-color: #26343c;
 
@@ -126,6 +134,7 @@
 }
 
 .offers h3 {
+  width: 170px;
   margin: 0;
 
   font-family: "Roboto Condensed", "Arial", sans-serif;
@@ -133,36 +142,6 @@
   line-height: 30px;
   font-weight: 400;
   color: #ffffff;
-}
-
-@media (min-width: 1290px) {
-  .offers li {
-    margin-right: 30px;
-
-    &:last-child,
-    &:nth-last-child(3n+2):nth-child(3n+3),
-    &:nth-last-child(3n+3):nth-child(3n+3),
-    &:nth-last-child(3n+1):nth-child(3n+3) {
-      margin-right: 0;
-    }
-  }
-}
-
-@media (min-width: 1024px) and (max-width: 1289px) {
-  .offers li {
-    margin-right: 30px;
-
-    &:last-child,
-    &:nth-last-child(even):nth-child(even),
-    &:nth-last-child(2n+3):nth-child(even) {
-      margin-right: 0;
-    }
-
-    &:last-child:nth-child(2n+3) {
-      margin-left: 30px;
-      margin-right: 30px;
-    }
-  }
 }
 
 @media (max-width: $tablet-width) {
@@ -185,7 +164,13 @@
   }
 
   .offers li {
+    flex-basis: auto;
     margin-bottom: 46px;
+
+    &:nth-child(3n+2),
+    &:nth-child(3n+3) {
+      margin-left: 0;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -234,10 +219,6 @@
         background-image: url("../img/bg-components-tablet@2x.jpg");
       }
     }
-  }
-
-  .offers h3 {
-    width: 170px;
   }
 }
 
