@@ -31,6 +31,12 @@ gulp.task("css", function () {
     .pipe(server.stream());
 });
 
+gulp.task("libs", function() {
+  return gulp.src("node_modules/svg4everybody/dist/svg4everybody.js")
+    .pipe(concat("vendor.js"))
+    .pipe(gulp.dest("build/js/"));
+})
+
 gulp.task("js", function() {
   return gulp.src("source/js/*.js")
     .pipe(concat("main.js"))
