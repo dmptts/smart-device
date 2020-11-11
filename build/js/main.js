@@ -464,6 +464,10 @@
     }
   });
 
+  if (svg4everybody) {
+    svg4everybody();
+  }
+
   initPage();
   getCurrentVersion();
   checkNeedToChangeElems();

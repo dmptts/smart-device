@@ -12,7 +12,6 @@
 
 .contacts__link {
   display: flex;
-  align-items: center;
 
   margin-bottom: 10px;
 
@@ -52,11 +51,17 @@
   }
 
   .contacts__link {
+    margin-bottom: 0;
+    margin-right: 32px;
     font-size: 0;
 
     &--mail {
-      margin-bottom: 3px;
-      margin-right: 30px;
+      width: 26px;
+      height: 18px;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 
@@ -72,8 +77,8 @@
     margin-right: 0;
 
     &--mail {
-      width: 30px;
-      height: 19px;
+      width: 26px;
+      height: 18px;
     }
 
     &--phone {
@@ -84,6 +89,10 @@
 }
 
 @media (max-width: $mobile-width) {
+  .contacts {
+    align-items: center;
+  }
+
   .contacts__link--mail {
     margin-bottom: 2px;
     margin-right: 22px;
