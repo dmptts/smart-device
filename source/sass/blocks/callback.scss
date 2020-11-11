@@ -109,6 +109,11 @@
   }
 }
 
+.callback input:required,
+.callback textarea:required {
+  box-shadow: none;
+}
+
 .callback input[type="text"],
 .callback input[type="tel"] {
   width: 270px;

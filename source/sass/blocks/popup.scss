@@ -69,6 +69,11 @@
   }
 }
 
+.popup input:required,
+.popup textarea:required {
+  box-shadow: none;
+}
+
 .popup textarea {
   height: 104px;
   margin-bottom: 29px;
