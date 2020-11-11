@@ -4,6 +4,7 @@
 
 .callback__container {
   position: relative;
+  z-index: 1;
 
   display: flex;
   flex-direction: column;
@@ -18,6 +19,7 @@
     content: "";
     top: -60px;
     right: -301px;
+    z-index: -1;
 
     width: 1731px;
     height: 647px;
