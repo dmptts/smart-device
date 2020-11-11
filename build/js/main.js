@@ -75,10 +75,18 @@
   };
 
   var toggleNavAccordion = function () {
+    if (contacts.classList.contains('page-footer__contacts--opened')) {
+      toggleContactsAccordion();
+    }
+
     nav.classList.toggle('page-footer__nav--opened');
   };
 
   var toggleContactsAccordion = function () {
+    if (nav.classList.contains('page-footer__nav--opened')) {
+      toggleNavAccordion();
+    }
+
     contacts.classList.toggle('page-footer__contacts--opened');
   };
 
