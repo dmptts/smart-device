@@ -320,6 +320,9 @@
   }
 
   .page-footer__contacts {
+    flex-shrink: 0;
+    width: 333px;
+    max-width: none;
     margin-right: 10px;
   }
 
@@ -452,7 +455,7 @@
   }
 
   .page-footer__contacts {
-    max-width: none;
+    width: auto;
     margin: 0;
   }
 
