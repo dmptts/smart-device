@@ -68,13 +68,12 @@
 }
 
 .page-footer__middle {
-  max-width: 994px;
-  flex-grow: 1;
+  flex-basis: 994px;
 }
 
 .page-footer__middle-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .page-footer h2 {
@@ -92,10 +91,8 @@
 }
 
 .page-footer__nav {
-  flex-basis: 308px;
-  flex-grow: 1;
+  flex-basis: 558px;
 
-  max-width: 558px;
   margin-right: 30px;
 }
 
@@ -309,7 +306,7 @@
   }
 
   .page-footer__middle {
-    width: auto;
+    flex-basis: auto;
   }
 
   .page-footer__middle-container {
