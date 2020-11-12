@@ -162,9 +162,13 @@
 
   var fillInputs = function (form) {
     if (isStorageSupport) {
-      form.querySelector('input[name="name-field"]').value = localStorage.getItem('name');
-      form.querySelector('input[name="phone-field"]').value = localStorage.getItem('phone');
-      form.querySelector('textarea[name="question-field"]').value = localStorage.getItem('question');
+      if (localStorage.getItem('name') !== null) {
+        form.querySelector('input[name="name-field"]').value = localStorage.getItem('name');
+      } else if (localStorage.getItem('phone') !== null) {
+        form.querySelector('input[name="phone-field"]').value = localStorage.getItem('phone');
+      } else if (localStorage.getItem('question') !== null) {
+        form.querySelector('textarea[name="question-field"]').value = localStorage.getItem('question');
+      }
     }
   };
 
