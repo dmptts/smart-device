@@ -4,33 +4,6 @@
   max-width: 1290px;
   padding-top: 112px;
   padding-bottom: 54px;
-
-  &::before,
-  &::after {
-    position: absolute;
-    content: "";
-    z-index: -1;
-
-    width: 336px;
-    height: 324px;
-
-    background-image: url("../img/bg-triangle.svg");
-    background-repeat: no-repeat;
-    background-size: 336px 324px;
-    background-position: center;
-  }
-
-  &::before {
-    top: 45px;
-    left: -113px;
-  }
-
-  &::after {
-    top: 396px;
-    right: -288px;
-
-    transform: rotate(180deg);
-  }
 }
 
 .features ul {
@@ -131,11 +104,6 @@
   .features__container {
     padding-top: 54px;
     padding-bottom: 30px;
-
-    &::before,
-    &::after {
-      display: none;
-    }
   }
 
   .features li {

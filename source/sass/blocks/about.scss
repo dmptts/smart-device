@@ -15,33 +15,6 @@
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/bg-year-desktop@2x.png");
   }
-
-  &::before,
-  &::after {
-    position: absolute;
-    content: "";
-    z-index: -1;
-
-    width: 872px;
-    height: 873px;
-
-    background-image: url("../img/bg-triangle-points.svg");
-    background-repeat: no-repeat;
-    background-size: 872px 873px;
-    background-position: center;
-  }
-
-  &::before {
-    top: -349px;
-    left: -611px;
-  }
-
-  &::after {
-    top: -651px;
-    left: 243px;
-
-    transform: rotate(180deg);
-  }
 }
 
 .about h2 {
@@ -92,11 +65,6 @@
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/bg-year-tablet@2x.png");
     }
-
-    &::after {
-      top: -566px;
-      left: 210px;
-    }
   }
 
   .about h2 {
@@ -119,11 +87,6 @@
     padding-right: 15px;
 
     background-image: none;
-
-    &::after {
-      top: -586px;
-      left: -121px;
-    }
   }
 
   .about h2 {

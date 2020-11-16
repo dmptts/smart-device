@@ -1,3 +1,29 @@
 .main-content__wrapper {
-  overflow: hidden;
+  background-image: url("../img/bg-triangle-points-left.svg"), url("../img/bg-triangle-points-right.svg"), url("../img/bg-triangle-left.svg"), url("../img/bg-triangle-right.svg");
+  background-repeat: no-repeat;
+  background-size: 872px 873px, 872px 873px, 336px 324px, 336px 324px;
+  background-position: -28.2% 444px, right 46.7% top 147px, 12.8% 45px, right 1.8% top 396px;
+
+  @media (max-width: 1600px) {
+    background-position: -65% 444px, right 45% top 147px, -4% 45px, right -7% top 396px;
+  }
+
+  @media (max-width: 1366px) {
+    background-image: url("../img/bg-triangle-points-right.svg"), url("../img/bg-triangle-left.svg");
+    background-size: 872px 873px, 336px 324px;
+    background-position: right 40% top 147px, -5% 45px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .main-content__wrapper {
+    background-image: url("../img/bg-triangle-points-right.svg");
+    background-position: right -315px top 90px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .main-content__wrapper {
+    background-position: right -432px bottom 272px;
+  }
 }
