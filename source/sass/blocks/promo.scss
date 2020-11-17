@@ -155,6 +155,10 @@
 
 @media (max-width: $mobile-width) {
   .promo__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
     padding-top: 216px;
     padding-bottom: 70px;
     padding-left: 15px;
@@ -193,6 +197,8 @@
   }
 
   .promo__btn {
+    align-self: center;
+
     width: 290px;
     margin-left: 3px;
   }
